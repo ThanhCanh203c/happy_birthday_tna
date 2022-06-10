@@ -47,7 +47,7 @@ const cw = canvas.width = 800;
 const ch = canvas.height = 400;
 
 const particles = [];
-const MAX_PART_COUNT = 100;
+const MAX_PART_COUNT = 50;
 
 const REIGNITE_RATE = 2; // rate at which flame will recover
 const MAX_PART_DOWNTIME = 15; // max limit at which smothered flame will recover
