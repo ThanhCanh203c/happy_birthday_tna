@@ -1,5 +1,31 @@
+@media (min-width: 1000px) {
+  #pc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .2);
+    display: flex !important;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pc p {
+    font-size: 40px;
+    margin: auto;
+    color: #fff;
+  }
+
+  .hide-on-pc {
+    display: none !important;
+  }
+}
+
 body {
-  background: #E57373;
+  background: #fff;
   height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
@@ -7,19 +33,36 @@ body {
 
 #banh {
   position: fixed;
-  bottom: 10%;
-  left: 50vw;
+  bottom: 8%;
+  left: 49vw;
   transform: translateX(-50%);
 }
 
 #hinh1 {
-  border-radius: 50%;
-  padding: 50px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #FDEDEE;
-  margin-top: 100px;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+@keyframes hinh1 {
+  0% {
+    transform: rotate(0);
+  }
+
+  30% {
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  70% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
 }
 
 #nen {
@@ -57,20 +100,48 @@ body {
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
 }
+
 #nen h1 {
   font-size: 60px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #BBDEFB;
+  color: #F48FB1;
   position: fixed;
-  top: 27%;
+  top: 33%;
+  text-shadow: 0 0 4px rgba(0, 0, 0, .4);
 }
+
+@keyframes slide {
+  0% {
+    transform: translateX(1000px) rotate(20deg);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 #nen p {
   font-size: 60px;
-  color:#FFF9C4;
+  color: #FF8A65;
   position: fixed;
-  top: 30%;
+  top: 37%;
+  text-shadow: 0 0 4px rgba(0, 0, 0, .4);
   text-align: center;
   padding: 16px;
+  animation: slide 3s, heartbeat 2s infinite;
 }
 
 #filter {
@@ -78,12 +149,12 @@ body {
 }
 
 .hide {
-  display: none!important;
+  display: none !important;
 }
 
 #mess {
   margin: auto;
-  margin-top: 10%;
+  margin-top: 15%;
   padding: 20px;
   width: 80%;
   height: 70%;
@@ -91,9 +162,10 @@ body {
   background-color: rgb(243, 224, 199);
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, .4);
-  animation: ss ease 1s;
+  animation: ss ease 1s, cc 2s infinite;
 }
-@keyframes ss{
+
+@keyframes ss {
   from {
     opacity: 0;
     transform: translateY(100px);
@@ -105,12 +177,23 @@ body {
   }
 }
 
+@keyframes cc {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 #mess h2 {
   color: #E57373;
   text-align: center;
   border-bottom: 1px solid #000;
   padding-bottom: 40px;
 }
+
 #mess p {
   padding: 0 8px;
   color: #211f1f;
