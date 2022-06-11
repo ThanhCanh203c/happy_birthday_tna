@@ -111,7 +111,7 @@ body {
 }
 
 #nen h1, #nen p {
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .1);
   border-radius: 20px;
   display: block;
   width: 100%;
