@@ -33,7 +33,7 @@ body {
 
 #banh {
   position: fixed;
-  bottom: 8%;
+  bottom: 6%;
   left: 49vw;
   transform: translateX(-50%);
 }
@@ -106,7 +106,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #F48FB1;
   position: fixed;
-  top: 33%;
+  top: 35%;
   text-shadow: 0 0 4px rgba(0, 0, 0, .4);
 }
 
@@ -139,7 +139,7 @@ body {
   font-size: 60px;
   color: #FF8A65;
   position: fixed;
-  top: 37%;
+  top: 39%;
   text-shadow: 0 0 4px rgba(0, 0, 0, .4);
   text-align: center;
   padding: 16px;
