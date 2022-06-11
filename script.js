@@ -47,9 +47,9 @@ const cw = canvas.width = 800;
 const ch = canvas.height = 400;
 
 const particles = [];
-const MAX_PART_COUNT = 25;
+const MAX_PART_COUNT = 70;
 
-const REIGNITE_RATE = 1; // rate at which flame will recover
+const REIGNITE_RATE = 2; // rate at which flame will recover
 const MAX_PART_DOWNTIME = 15; // max limit at which smothered flame will recover
 
 const rand = (min, max) => min + Math.random() * (max - min);
@@ -123,6 +123,7 @@ const updateParticles = () => {
 
 var audio = new Audio('./music.mp3');
 
+var active = false;
 const animate = () => {
   requestAnimationFrame(animate);
   ctx.clearRect(0, 0, cw, ch);
@@ -130,14 +131,21 @@ const animate = () => {
   // Smother flame if user is blowing
   if (microphone && isBlowing())
     if (particleCount > -MAX_PART_DOWNTIME) particleCount -= 1;
-  if (particleCount == -15) {
+  if (particleCount < -5 && active==false) {
+    active = true;
     var app = document.getElementById('app');
     var mess = document.getElementById('mess');
+
     var body = document.getElementsByTagName('body');
     body[0].style.backgroundColor = '#E57373';
     app.classList.add('hide');
-    mess.classList.remove('hide');
+
     audio.play();
+    document.getElementById('thu').classList.remove('hide');
+    setTimeout(function () {
+      document.getElementById('thu').classList.add('hide');
+      mess.classList.remove('hide');
+    }, 1200)
   }
 
   // draw flame
