@@ -110,6 +110,13 @@ body {
   text-shadow: 0 0 4px rgba(0, 0, 0, .4);
 }
 
+#nen h1, #nen p {
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 20px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
 @keyframes slide {
   0% {
     transform: translateX(1000px) rotate(20deg);
